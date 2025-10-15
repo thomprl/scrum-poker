@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Scrum Poker (stdlib)</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header><h1>Scrum Poker (Python stdlib)</h1></header>
+    <main>
+      <div class="card">
+        <div class="row">
+          <input id="name" placeholder="Your name" />
+          <input id="room" placeholder="Room code (e.g. ABC123)" maxlength="10" style="text-transform:uppercase" />
+          <button class="primary" id="joinBtn">Join Room</button>
+          <button id="createBtn">Create Room</button>
+        </div>
+        <div class="hint" id="hostHint"></div>
+      </div>
+
+      <div class="card" id="roomBar" style="display:none">
+        <div class="flex-between">
+          <div>
+            <span class="pill">Room: <strong id="roomCode"></strong></span>
+            <span class="pill">Host: <span id="hostName"></span></span>
+            <span class="pill">Status: <span id="statusText"></span></span>
+          </div>
+          <div class="row">
+            <button id="revealBtn" class="ghost">Reveal</button>
+            <button id="resetBtn" class="ghost">Reset</button>
+            <button id="copyBtn" class="ghost">Copy link</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="voteCard" style="display:none">
+        <div class="row"><strong>Your vote:</strong> <span id="yourVote" class="pill muted">None</span></div>
+        <div class="grid" id="voteGrid"></div>
+      </div>
+
+      <div class="card" id="playersCard" style="display:none">
+        <h3>Players</h3>
+        <table id="playersTbl">
+          <thead><tr><th>Name</th><th>Voted</th><th>Value</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card" id="tallyCard" style="display:none">
+        <h3>Results</h3>
+        <table id="tallyTbl">
+          <thead><tr><th>Value</th><th>Count</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
